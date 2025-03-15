@@ -1,0 +1,762 @@
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #f8d9e3;
+    margin: 0;
+}
+
+header {
+    background-color: #f3b9c4;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.logo {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+header .logo img {
+    max-height: 200px; 
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a03a5d;
+    font-size: 22px; /* Increase font size */
+    font-weight: bold; /* Make font bold */
+    padding: 10px;
+}
+
+nav ul li:not(:last-child)::after {
+    content: '|';
+    color: #a03a5d;
+    margin-left: 15px;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Mobile Quick Links - Always hidden by default */
+.mobile-quick-links {
+    display: none;
+}
+
+/* Menu toggle button - hidden by default */
+.menu-toggle {
+    display: none; /* Hide the menu toggle button by default */
+}
+
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .web-menu {
+        display: none; /* Hide the web-style menu on mobile */
+    }
+
+    header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .logo {
+        margin: 0 auto 10px auto; /* Center logo and add bottom margin */
+    }
+
+    /* Show and style the menu toggle */
+    .menu-toggle {
+        display: block; /* Show the menu toggle button */
+        cursor: pointer;
+        font-size: 24px;
+        color: #a03a5d;
+        margin: 10px;
+        text-align: center; /* Center the menu toggle button */
+    }
+
+    nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Take full width */
+        text-align: center; /* Center items */
+    }
+
+    /* Show navigation when active class is applied */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Decrease font size for mobile */
+        padding: 10px; /* Adjust padding for mobile */
+        display: block;
+    }
+
+    nav ul li:not(:last-child)::after {
+        content: '';
+    }
+
+    /* Show and style the mobile quick links */
+    .mobile-quick-links {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        overflow-x: auto;
+        margin-bottom: 10px;
+        background-color: #ffecf1;
+    }
+    
+    .mobile-quick-links a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin: 0 5px;
+        white-space: nowrap;
+        color: #a03a5d;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 15px;
+        background-color: #f3b9c4;
+    }
+
+    .container {
+        flex-direction: column; /* Stack containers vertically on mobile */
+    }
+
+    .service-images {
+        flex-direction: column; /* Stack images vertically on mobile */
+    }
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+/* Update your web menu nav links to use the bubble style */
+nav.web-menu ul li a {
+    text-decoration: none;
+    color: #a03a5d;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: #f3b9c4;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+nav.web-menu ul li a:hover {
+    transform: scale(1.05);
+}
+
+/* Remove the divider lines between nav items */
+nav.web-menu ul li:not(:last-child)::after {
+    content: none;
+}
+
+/* Add proper spacing between nav items */
+nav.web-menu ul li {
+    display: inline-block;
+    margin: 0 6px;
+    position: relative;
+}
+
+/* Fix the dropdown positioning with the new bubbles */
+nav.web-menu ul li .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffecf1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 100;
+}
+
+nav.web-menu ul li:hover .dropdown {
+    display: block;
+}
+
+nav.web-menu ul li .dropdown li {
+    display: block;
+    margin: 8px 0;
+}
+
+/* Style for the dropdown arrow */
+nav.web-menu ul li .arrow {
+    cursor: pointer;
+    color: #a03a5d;
+    margin-left: 3px;
+}
+
+.slide {
+    margin: 0 10px;
+}
+
+.slide img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta h2 {
+    font-size: 24px;
+    color: #a03a5d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0; 
+    background-color: #f3b9c4;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px; 
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.slide {
+    display: none;
+    flex: 1;
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+.active {
+    display: block;
+}
+
+.button {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.cta {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    margin: 20px; 
+    padding: 20px; 
+    background-color: #f3e5f5; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.gif-template {
+    position: relative;
+    text-align: center;
+    width: 90%; 
+    margin: 0; 
+    padding: 10px; 
+}
+
+.gif-template img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+}
+
+.gif-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; 
+    color: white;   
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.gif-template a {
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.location-container {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    margin: 20px; 
+    padding: 20px; 
+    background-color: #f3e5f5; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.map-view {
+    flex: 1; 
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: center;
+    padding: 0 10px; 
+}
+
+.map-view iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; 
+    height: auto; 
+}
+
+.content {
+    flex: 1; 
+    text-align: center;
+}
+
+.map-view h1,.content h2 {
+    color: #a03a5d;
+}
+
+.contact-us {
+    text-align: center;
+    margin: 20px 0;
+    color: #a03a5d;
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    margin: 20px; 
+    padding: 20px; 
+    background-color: #f3e5f5; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+#nail-services {
+    position: relative;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+.nail-services img {
+    width: 60%; 
+    height: auto;
+}
+
+.service-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#nail-services h3 {
+    font-size: 24px;
+    color: #a03a5d;
+    margin-top: 15px; 
+    margin-bottom: 5px; 
+}
+
+#nail-services p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0; 
+line-height: 1.5; 
+}
+
+#nail-services .faq-item:hover {
+    background-color: #e3a8b4; 
+    transition: background-color 0.3s;
+}
+
+#faqs {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Width of the image */
+    max-width: 700px; /* Max width */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#faqs h2 {
+    font-size: 28px;
+    color: #a03a5d;
+    margin-bottom: 15px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-item h3 {
+    font-size: 24px;
+    color: #a03a5d;
+    cursor: pointer;
+}
+
+.faq-item p {
+    color: #333;
+    margin: 5px 0 0 0; 
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 10px; 
+}
+    /* Mobile Quick Links - stacked 4-up, 3-below */
+.mobile-quick-links {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-quick-links {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        background-color: #ffecf1;
+    }
+    
+    .mobile-links-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .mobile-links-row:last-child {
+        margin-bottom: 0;
+    }
+    
+    .mobile-quick-links a {
+        display: inline-block;
+        padding: 8px 0;
+        width: 23%;
+        text-align: center;
+        color: #a03a5d;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 15px;
+        background-color: #f3b9c4;
+        font-size: 14px;
+    }
+    
+    /* Second row (3 links) should be centered */
+    .mobile-links-row:nth-child(2) {
+        justify-content: center;
+    }
+    
+    .mobile-links-row:nth-child(2) a {
+        width: 30%;
+        margin: 0 5px;
+    }
+}
+#nail-services {
+    position: relative;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.service-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service-images img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    position: absolute;
+    opacity: 0.8;
+    transition: transform 0.3s;
+}
+
+.service-images img:nth-child(1) {
+    top: 5%;
+    left: 5%;
+}
+
+.service-images img:nth-child(2) {
+    top: 20%;
+    right: 10%;
+}
+
+.service-images img:nth-child(3) {
+    top: 40%;
+    left: 15%;
+}
+
+.service-images img:nth-child(4) {
+    top: 60%;
+    right: 15%;
+}
+
+.service-images img:nth-child(5) {
+    bottom: 20%;
+    left: 10%;
+}
+
+.service-images img:nth-child(6) {
+    bottom: 10%;
+    right: 5%;
+}
+
+.service-images img:nth-child(7) {
+    bottom: 30%;
+    left: 40%;
+}
+
+.service-images img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Display sections side by side */
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.center {
+    text-align: center;
+    color: #a03a5d; 
+}
+
+.service-section {
+    flex: 1; /* Allow sections to take equal space */
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.service-images img {
+    max-width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* GIF Template Styles */
+.cta {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gif-template {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.gif-template.side {
+    width: 400px;
+    opacity: 0.6;
+}
+
+.gif-template.main {
+    width: 400px;
+    opacity: 0.8;
+}
+
+.gif-template:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.gif-template img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .gif-template.side {
+        display: none;
+    }
+    
+    .gif-template.main {
+        width: 90%;
+    }
+}
+
