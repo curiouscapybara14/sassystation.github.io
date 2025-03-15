@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Sassy Station</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Review.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ImagesAndStuff/Logo.png" alt="Sassy Station Logo">
+        </div>
+        <nav class = "web-menu">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                    <span class="arrow" onclick="toggleDropdown()">▾</span>
+                    <ul class="dropdown">
+                        <li><a href="index.html#location">Location</a></li>
+                        <li><a href="index.html#contact-us">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="Appointment.html">Appointment</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li><a href="FAQS.html">FAQs</a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-quick-links">
+            <div class="mobile-links-row">
+                <a href="Appointment.html">Book</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="faqs.html">FAQs</a>
+            </div>
+            <div class="mobile-links-row">
+                <a href="reviews.html">Reviews</a>
+                <a href="index.html">HOME</a>
+                <a href="index.html#contact-us">Contact</a>
+            </div>
+        </div>
+
+    </header>
+    <script src="dropdown.js"></script>
+    
+    <main>
+        <section id="reviews" class="reviews">
+            <h2 class="reviews-header">Testimonials</h2>
+            <div class="review-container">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagesAndStuff/Review1.png" alt="Review 1">
+                            <h4>- Princess Patacsil</h4>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesAndStuff/Review2.png" alt="Review 2">
+                            <h4>- Customer 2</h4>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesAndStuff/Review3.png" alt="Review 3">
+                            <p>"Amazing experience! Will definitely come back!"</p>
+                            <h4>- Customer 3</h4>
+                        </div>
+                        <!-- Adding more -->
+                    </div>
+                    <button class="carousel-control left" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="carousel-control right" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Sassy Station. All rights reserved.</p>
+        <p>Marian Nicole G. Acosta  ●  Jhullana Isabelle P. Enriquez  ●  Alnajie Dale Simone R. Paluhod</p>
+        <p>Aria  ●  Jules  ●  Najie</p>
+        <ul><li><a href="index.html#contact">Contact Us</a></li></ul>
+    </footer>
+    <script src="Review.js"></script>
+</body>
+</html>

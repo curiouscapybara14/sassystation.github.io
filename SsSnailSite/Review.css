@@ -1,0 +1,225 @@
+.reviews {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.reviews-header {
+    font-size: 36px;
+    color: #a03a5d;
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+
+.review-container {
+    border: 5px solid #d1a3b5;
+    border-radius: 15px; 
+    padding: 20px;
+    background-color: #fff; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; 
+}
+
+.carousel-item {
+    min-width: 100%; 
+    box-sizing: border-box;
+    text-align: center; 
+}
+
+.carousel-item img {
+    width: 100%; 
+    border-radius: 10px; 
+    margin-bottom: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #a03a5d;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 192, 203, 0.8);
+}
+
+.carousel-control.left {
+    left: 10px; 
+}
+
+.carousel-control.right {
+    right: 10px; 
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    main {
+        margin-top: 280px; /* Increased spacing for mobile */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .web-menu {
+        display: none; /* Hide the web-style menu on mobile */
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 1000;
+        background-color: #f3b9c4;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    header .logo img {
+        max-height: 200px;
+    }
+
+    /* Menu toggle button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #a03a5d;
+        margin: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+    }
+
+    nav ul li:not(:last-child)::after {
+        content: '';
+    }
+
+    /* Mobile quick links - exactly like portfolio page */
+    .mobile-quick-links {
+        position: fixed;
+        top: 150px;
+        left: 0;
+        width: 100%;
+        background-color: #ffecf1;
+        z-index: 999;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    
+    .mobile-links-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .mobile-links-row:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* First row (4 links) */
+    .mobile-links-row:nth-child(1) a {
+        display: inline-block;
+        padding: 8px 0;
+        width: 23%;
+        text-align: center;
+        color: #a03a5d;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 15px;
+        background-color: #f3b9c4;
+        font-size: 14px;
+    }
+    
+    /* Second row (3 links) */
+    .mobile-links-row:nth-child(2) {
+        justify-content: center;
+    }
+    
+    .mobile-links-row:nth-child(2) a {
+        display: inline-block;
+        padding: 8px 0;
+        width: 30%;
+        text-align: center;
+        color: #a03a5d;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 15px;
+        background-color: #f3b9c4;
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    
+    /* Remove or comment out the duplicate main margin-top declaration later in the mobile section */
+    /* Add proper spacing for main content */
+    /* main {
+        margin-top: 210px;
+    } */
+    
+    /* Make reviews header properly positioned */
+    .reviews-header {
+        margin-top: 210px;
+    }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 769px) {
+    .mobile-quick-links {
+        display: none;
+    }
+
+    .web-menu {
+        display: block;
+    }
+    
+}
